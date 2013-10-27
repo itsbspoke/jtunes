@@ -60,12 +60,12 @@ group :development, :test do
   gem "guard-rspec"
   gem "guard-bundler"
   gem "rb-fsevent"
+  gem "factory_girl_rails", "4.1.0"
+  gem "forgery"
 end
 
 group :test do
   gem "capybara"
-  gem "factory_girl_rails", "4.1.0"
-  gem "forgery"
   gem "launchy"
   gem "database_cleaner"
 end

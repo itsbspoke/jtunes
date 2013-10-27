@@ -29,7 +29,8 @@ has_many :songs
 
 name: limited length string
 icon: An image for the album
-clean: boolean, indicating OK for play by minors
+clean: boolean, indicating OK for play by minors -- don't forget to prevent this
+value from being null
 release_date: 
 
 *Song
@@ -41,6 +42,14 @@ length_in_seconds: integer
 *Play
 belongs_to :user
 belongs_to :song
+
+=== Topics:
+
+Clean
+
+Release date
+
+Plays
 
 === Advanced questions:
 
