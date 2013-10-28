@@ -1,15 +1,15 @@
-== jTunes exercize
+# jTunes exercize
 
 This exercize is designed to expose you to meaningful intermediate concepts that should maximize your ultimate independence in Rails development.
 
-=== Step 1:
+## Step 1:
 
 Fork this repository, and use the SSH repo URL to clone to your machine.
 
 Throughout the exercise, as you complete work that satisfies you, push it to
 your repository.
 
-=== Step 2:
+## Step 2: The model layer
 
 Create migrations that will support these domain concepts.  I've provided the
 associations for you; you will need to ensure the proper foreign keys are
@@ -35,16 +35,14 @@ bundle exec rake jtunes:seed
 Extra credit for those who include the not-null restriction on booleans in this
 scheme.
 
-=== Topics:
-
-==== The home page
+## Step 3: The home page
 
 Create a home page that lists the following:
 
 The five albums most recently released, with artist and album name.
 The five songs most often listened to, with artist and album name.
 
-==== The artist page
+## Step 4:  The artist page
 
 Create an artist home page that displays the artist's name and icon image.
 
@@ -56,7 +54,7 @@ Note that the data is similar in terms of what's fetched.
 When this page is ready, add links on the home page to the artist whereever an
 artist name is mentioned.
 
-=== The plot thickens
+## Step 5: The plot thickens
 
 We released your work on jTunes, and it led to one of Tipper Gore's grandkids
 playing 'Ye's [New Slaves](http://rd.io/x/QE_zK0Kppj8/) while she was around.
@@ -67,7 +65,7 @@ accounts that had logged in and verified their age would see albums that
 displayed the Parental Advisory sticker that Tipper spearheaded.
 
 
-=== Advanced questions:
+## Step 6: The too-hard one
 
 Let's say that we wanted to introduce a 'follow' concept to the site that
 allowed users to follow each other, or artists.  What would the associations
