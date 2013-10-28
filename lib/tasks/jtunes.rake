@@ -3,7 +3,7 @@ namespace :jtunes do
   task :seed => [:seed_artists, :seed_users, :seed_plays]
 
   task :seed_artists => :environment do
-    artist_count = 10
+    artist_count = 100
     puts "Creating #{artist_count} artists"
     artist_count.times do |artist_num|
       artist = FactoryGirl.create(:artist)
@@ -23,13 +23,13 @@ namespace :jtunes do
   end
 
   task :seed_users => :environment do
-    user_count = 10
+    user_count = 100
     puts "Creating #{user_count} users"
     user_count.times { FactoryGirl.create(:user) }
   end
 
   task :seed_plays do
-    play_count = 100
+    play_count = 10000
     puts "Creating #{play_count} plays"
     play_count.times do |play_count|
       FactoryGirl.create(:play, user: User.random, song: Song.random)
