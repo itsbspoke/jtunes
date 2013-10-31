@@ -15,7 +15,7 @@ namespace :jtunes do
         puts "Album #{album_num+1}: #{album.name}"
         song_count = rand(17)+1
         song_count.times do |song_num|
-          song = FactoryGirl.create(:song, artist: artist, album: album)
+          song = FactoryGirl.create(:song, artist: artist, album: album, clean: album.clean)
           puts "Song #{song_num+1}: #{song.name}"
         end
       end
