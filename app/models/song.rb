@@ -5,7 +5,7 @@ class Song < ActiveRecord::Base
   attr_accessor :play_count
 
   def self.random
-    where("random() < 0.075").first
+    find(Song.find(rand(Song.count)))
   end
 
   def self.top_tracks
@@ -17,16 +17,30 @@ class Song < ActiveRecord::Base
     # I found out from the rails console that the count column was
     # named count_all, so the final implementation was: [jvf]
     play_hash = Play.order("count_all desc").limit(5).count(group: :song_id)
-    
+
     #Other useful hash methods
     # play_hash.values
     # play_hash.keys
     # play_hash[key]
-    
+
+    collect_songs(play_hash)
+  end
+
+  def self.top_tracks_for_artist(artist_id)
+    play_hash = Play.joins("inner join songs on songs.id = plays.song_id").
+      joins("inner join artists on artists.id = songs.artist_id").
+      order("count_all desc").limit(5).where("artists.id = #{artist_id}").count(group: :song_id)
+    collect_songs(play_hash)
+  end
+
+  private
+
+  def self.collect_songs(play_hash)
     play_hash.collect do |song_id, play_count| 
       song = Song.find(song_id)
       song.play_count = play_count
       song
     end
   end
+
 end
